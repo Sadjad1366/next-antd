@@ -5,7 +5,7 @@ import React from 'react'
 
 function AppHeader() {
   return (
-    <Header className="!bg-white border-b border-[#f1f1f1] flex justify-between items-center">
+    <Header className="!bg-white border-b border-[#f1f1f1] flex justify-between items-center sticky top-0">
       <div className='flex items-center gap-3'><RadarChartOutlined className='text-3xl' />
       <div>Academic</div>
       </div>

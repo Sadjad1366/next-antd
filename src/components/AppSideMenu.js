@@ -1,7 +1,47 @@
+'use client'
+import { Menu } from "antd";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 
-function AppSideMenu() {
-  return <div>SideMenu </div>;
-}
+export default function AppSideMenu() {
+  const pathname = usePathname();
+  const [selectedKey, setSelectedKey] = React.useState([""]);
 
-export default AppSideMenu;
+  React.useEffect(() => {
+      if(pathname.startsWith("/bookmarks")) {
+            setSelectedKey(["2"])
+      } else if (pathname.startsWith("/courses")) {
+            setSelectedKey(["3"])
+      } else if (pathname.startsWith("/courses")) {
+            setSelectedKey(["4"])
+      } else if (pathname.startsWith("/courses")) {
+            setSelectedKey(["5"])
+      } else if (pathname.startsWith("/courses")) {
+            setSelectedKey(["6"])
+      } else if (pathname.startsWith("/courses")) {
+            setSelectedKey(["7"])
+      } else if (pathname.startsWith("/courses")) {
+            setSelectedKey(["8"])
+      } else if (pathname.startsWith("/courses")) {
+            setSelectedKey(["9"])
+      } else if (pathname === "/") {
+            setSelectedKey(["1"])
+      }
+  },[pathname]);
+  
+  const menuItems = [
+    { label: <Link href="/">Home</Link>, key: 1 },
+    { label: <Link href="/bookmarks">Bookmarks</Link>, key: 2 },
+    { type: "divider" },
+    { label: <Link href="/courses">Courses</Link>, key: 3 },
+    { label: <Link href="/tutorials">Tutorials</Link>, key: 4 },
+    { label: <Link href="/best-practices">Best practices</Link>, key: 5 },
+    { label: <Link href="/certifications">Certifications</Link>, key: 6 },
+    { type: "divider" },
+    { label: <Link href="/resources">Resources</Link>, key: 7 },
+    { label: <Link href="/events">Events</Link>, key: 8 },
+    { label: <Link href="/community">Community</Link>, key: 9 },
+  ];
+  return <Menu mode="inline" items={menuItems}></Menu>;
+}

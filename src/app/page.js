@@ -1,8 +1,9 @@
 'use client'
 import LearningTable from "@/components/LearningTable";
+import ProgressComp from "@/components/Progress";
 import Progress from "@/components/Progress";
 import { CrownOutlined, FileProtectOutlined, HddOutlined } from "@ant-design/icons";
-import { Button, Card, Col, Flex, Row, Space, Typography } from "antd";
+import { Button, Card, Col, Flex, Row, Rate, Space, Typography } from "antd";
 
 const { Title } = Typography;
 
@@ -53,7 +54,19 @@ export default function Home() {
         </Row>
         <LearningTable/>
       </Col>
-      <Col span={7}><Progress/></Col>
+      <Col span={7}><ProgressComp/>
+      <Title level={5} >Popular Courses</Title>
+      <Space direction="vertical" className="w-full">
+        <Card>
+          <Title level={5}>Python Basics</Title>
+          <Rate disabled defaultValue={2} />
+        </Card>
+        <Card>
+          <Title level={5}>Next JS Crash Courses</Title>
+          <Rate disabled defaultValue={4} />
+        </Card>
+      </Space>
+      </Col>
     </Row>
   );
 }

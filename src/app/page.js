@@ -1,5 +1,6 @@
 'use client'
 import LearningTable from "@/components/LearningTable";
+import Progress from "@/components/Progress";
 import { CrownOutlined, FileProtectOutlined, HddOutlined } from "@ant-design/icons";
 import { Button, Card, Col, Flex, Row, Space, Typography } from "antd";
 
@@ -52,7 +53,7 @@ export default function Home() {
         </Row>
         <LearningTable/>
       </Col>
-      <Col span={7}>progress</Col>
+      <Col span={7}><Progress/></Col>
     </Row>
   );
 }

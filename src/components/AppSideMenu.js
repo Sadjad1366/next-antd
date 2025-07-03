@@ -13,23 +13,23 @@ export default function AppSideMenu() {
             setSelectedKey(["2"])
       } else if (pathname.startsWith("/courses")) {
             setSelectedKey(["3"])
-      } else if (pathname.startsWith("/courses")) {
+      } else if (pathname.startsWith("/tutorials")) {
             setSelectedKey(["4"])
-      } else if (pathname.startsWith("/courses")) {
+      } else if (pathname.startsWith("/best-practices")) {
             setSelectedKey(["5"])
-      } else if (pathname.startsWith("/courses")) {
+      } else if (pathname.startsWith("/certifications")) {
             setSelectedKey(["6"])
-      } else if (pathname.startsWith("/courses")) {
+      } else if (pathname.startsWith("/resources")) {
             setSelectedKey(["7"])
-      } else if (pathname.startsWith("/courses")) {
+      } else if (pathname.startsWith("/events")) {
             setSelectedKey(["8"])
-      } else if (pathname.startsWith("/courses")) {
+      } else if (pathname.startsWith("/community")) {
             setSelectedKey(["9"])
       } else if (pathname === "/") {
             setSelectedKey(["1"])
       }
   },[pathname]);
-  
+
   const menuItems = [
     { label: <Link href="/">Home</Link>, key: 1 },
     { label: <Link href="/bookmarks">Bookmarks</Link>, key: 2 },
@@ -43,5 +43,5 @@ export default function AppSideMenu() {
     { label: <Link href="/events">Events</Link>, key: 8 },
     { label: <Link href="/community">Community</Link>, key: 9 },
   ];
-  return <Menu mode="inline" items={menuItems}></Menu>;
+  return <Menu mode="inline" selectedKeys={selectedKey} items={menuItems}></Menu>;
 }

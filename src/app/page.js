@@ -63,7 +63,7 @@ export default function Home() {
         </Card>
         <Card>
           <Title level={5}>Next JS Crash Courses</Title>
-          <Rate disabled defaultValue={4} />
+          <Rate defaultValue={4} />
         </Card>
       </Space>
       </Col>
